@@ -36,3 +36,6 @@ Now we can have:
     val question2 = Question<Boolean>("The sky is green. True or false", false, "easy")
     val question3 = Question<Int>("How many days are there between full moons?", 28, "hard")
 ```
+Use Enum classes to model types that represent a finite set of distinct values, such as directions, states, modes, and so forth.
+
+![image](https://user-images.githubusercontent.com/8829018/179424197-82974f48-3c52-47a4-9d95-53225d15846e.png)
