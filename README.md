@@ -24,6 +24,7 @@ class NumericQuestion(
 )
 ```
 To Generic: 
+![img_1.png](img_1.png)
 
 ```
 class Question<T>(val question: String, val answer: T, val difficulty: String) {
@@ -153,6 +154,42 @@ fun main() {
 You can create a new class called Quiz to store the quiz questions, then make the 
 StudentProgress class a companion object of Quiz.
 
+``` 
+    data class Question<T>(
+        val questionText: String,
+        val answer: T,
+        val difficulty: Difficulty
+    ) {
+        enum class Difficulty {
+            EASY,
+            MEDIUM,
+            HARD
+        }
+    }
+    
+    
+    class Quiz {
+    val question1 = Question<String>("Quoth the raven ___", "nevermore", Question.Difficulty.MEDIUM)
+    val question2 =
+        Question<Boolean>("The sky is green. True or false", false, Question.Difficulty.EASY)
+    val question3 =
+        Question<Int>("How many days are there between full moons?", 28, Question.Difficulty.HARD)
+
+
+    companion object StudentProgress {
+        var total: Int = 10
+        var answered: Int = 3
+    }
+
+}
+    fun main() {
+    
+        println("${Quiz.answered} of ${Quiz.total} answered.")
+    }
+```
+
+
+    
 
 
 
