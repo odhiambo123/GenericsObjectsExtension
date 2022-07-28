@@ -13,12 +13,26 @@ package com.davidodhiambo.genericsobjectsextension
 *
 * the generic data type is provided when the class is instantiated
 *
+*
+* Defining a class as a data class allows
+* the compiler to generate the
+* equals,
+* hashCode,
+* toString,
+* copy,
+* component1, component2, etc methods for you.
 * */
 data class Question<T>(
     val questionText: String,
     val answer: T,
     val difficulty: Difficulty
 ) {
+    /*
+    * Use Enum classes to:
+    * Prevent accidental changes to the difficulty level values
+    * Ease of maintaining the code incase you add more leveles of difficulty
+    *
+    * */
     enum class Difficulty {
         EASY,
         MEDIUM,
@@ -28,6 +42,5 @@ data class Question<T>(
 fun main() {
 
     println("${Quiz.answered} of ${Quiz.total} answered.")
-
     println()
 }
